@@ -7,8 +7,8 @@ OBJS = obj/AboutDialog.o obj/MainWindow.o obj/Resource.o obj/WinMain.o
 WARNS = -Wall
 
 # Names of tools to use when building
-CC = gcc
-RC = windres
+CC = i686-w64-mingw32-gcc
+RC = i686-w64-mingw32-windres
 EXE = Win32App.exe
 
 # Compiler flags. Compile ANSI build only if CHARSET=ANSI.
@@ -33,7 +33,7 @@ clean:
 
 # Create build output directories if they don't exist
 bin obj:
-	@if not exist "$@" mkdir "$@"
+	mkdir -p "$@"
 
 # Compile object files for executable
 obj/%.o: src/%.c | obj
